@@ -1,12 +1,17 @@
+package LinkedNode;
+
 public class CustomList {
     private Node start;
+    private Node end;
 
     public CustomList() {
         start = null;
+        end = null;
     }
 
     public CustomList(int info) {
         start = new Node(info);
+        end = null;
     }
 
     public CustomList(int[] massiv) {
@@ -16,6 +21,14 @@ public class CustomList {
     }
 
     public void add(int info) {
+        Node temp = start;
+        if(start.nextNode == null){
+            Node node = new Node(info);
+            node.nextNode = start;
+            end = temp;
+            start = node;
+            return;
+        }
         Node node = new Node(info);
         node.nextNode = start;
         start = node;
@@ -226,13 +239,13 @@ public class CustomList {
 //        }
 //
 //        int counter = 0;
-//        Node pointer = start;
-//        Node prev1 = new Node(0);
-//        Node our1 = new Node(0);
-//        Node next1 = new Node(0);
-//        Node prev2 = new Node(0);
-//        Node our2 = new Node(0);
-//        Node next2 = new Node(0);
+//        LinkedNode.Node pointer = start;
+//        LinkedNode.Node prev1 = new LinkedNode.Node(0);
+//        LinkedNode.Node our1 = new LinkedNode.Node(0);
+//        LinkedNode.Node next1 = new LinkedNode.Node(0);
+//        LinkedNode.Node prev2 = new LinkedNode.Node(0);
+//        LinkedNode.Node our2 = new LinkedNode.Node(0);
+//        LinkedNode.Node next2 = new LinkedNode.Node(0);
 //
 //        if (index1 == 0){
 //            while (counter != index2 - 1) {
@@ -306,11 +319,11 @@ public class CustomList {
 //    }
 //}
 //        int counter = 0;
-//        Node pointer = start;
-//        Node first = new Node(0);
-//        Node second = new Node(0);
-//        Node temp = new Node(0);
-//        Node temp1 = new Node(0);
+//        LinkedNode.Node pointer = start;
+//        LinkedNode.Node first = new LinkedNode.Node(0);
+//        LinkedNode.Node second = new LinkedNode.Node(0);
+//        LinkedNode.Node temp = new LinkedNode.Node(0);
+//        LinkedNode.Node temp1 = new LinkedNode.Node(0);
 //
 //        while (counter <= index1 | counter <= index2) {
 //            if (counter == index1 - 1) {
