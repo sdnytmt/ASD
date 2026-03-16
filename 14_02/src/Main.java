@@ -7,11 +7,16 @@ public class Main {
         CustomList customList1 = new CustomList(massiv);
         customList1.print();
 
-        customList.deleteLast();
         customList.print();
 
-        customList.deleteLast();
         customList1.deleteLast();
+        customList1.print();
+
+        customList.addByIndex(5, 2);
+        customList.print();
+
+        customList1.print();
+        customList1.swap(1, 2); //не работает(
         customList1.print();
     }
 }
